@@ -10,52 +10,73 @@
     <link href="css/style.css" rel="stylesheet">
   </head>
   <body>
-    <nav class="navbar navbar-toggler navbar-dark navbar-expand-sm">
-      <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
-        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <a class="navbar-brand align-self-center" href="#"><img src="img/logo.png" height="30" width="41"> </a>
-      <div class="collapse navbar-collapse" id="navbarNavDropdown">
-        <ul class="navbar-nav">
-          <li class="nav-item active">
-            <a class="nav-link" href="#"><i class="fas fa-house-user"></i>Home<span class="sr-only">(current)</span> </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="./aboutus.html"><i class="far fa-question-circle"></i>About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#"><i class="fas fa-th-list"></i>Menu</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="./contactus.html"><i class="fas fa-address-book"></i>Contact</a>
-          </li>
-        </ul>
-    
+   <!-- Button trigger modal -->
+<button type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModal">
+  Reserve a Table
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" id="exampleModalLabel">Reserve a Table</h3>
+        <button type="button" class="close" data-dismiss="modal" >&times</button>
       </div>
-      <span class="navbar-text">
-        <a data-toggle="modal" data-target="#loginmodal">
-          <span class="fa fa-sign-in-alt"></span><a data-target="#loginmodel">Login</a>
-        </a>
-      </span>
-    </nav>
-    <div class="uk-container">
-        <h5>hello this is uikit</h5>
+      <div class="modal-body">
+        <form id="reservetable">
+          <div class="form-group row align-items-center">
+            <label class="col-12 col-sm-4 col-form-label">Number Of Guest</label>
+            <div class="col-12 col-sm">
+              <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                <label class="btn btn-warning">
+                  <input type="radio" name="guest1" id="guest1" autocomplete="off">1
+                </label>
+                <label class="btn btn-warning">
+                  <input type="radio" name="guest2" id="guest2" autocomplete="off">2
+                </label>
+                <label class="btn btn-warning">
+                  <input type="radio" name="guest3" id="guest3" autocomplete="off ">3
+                </label>
+                <label class="btn btn-warning">
+                  <input type="radio" name="guest4" id="guest4" autocomplete="off">4
+                </label>
+                <label class="btn btn-warning">
+                  <input type="radio" name="guest5" id="guest5" autocomplete="off">5
+                </label>
+                <label class="btn btn-warning">
+                  <input type="radio" name="guest6" id="guest6" autocomplete="off ">6
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="form-group row align-items-center ">
+            <label class="col-12 col-sm-4 col-form-label">Section</label>
+            <div class="btn-group col-12 col-sm-6" role="group" aria-label="Basic example">
+              <button type="button" class="btn btn-success">Non-smoking</button>
+              <button type="button" class="btn btn-danger">Smoking</button>
+            </div>
+          </div>
+          <div class="form-group row align-item-center">
+            <label class="col-12 col-sm-4">Date and Time</label>
+            <div class="col-12 col-sm-4">
+              <input type="date" class="form-control" name="date">
+            </div>
+            <div class="col-12 col-sm-4">
+              <input type="time" class="form-control" name="time">
+            </div>
+          </div>
+          <div class="form-group row ">
+            <div class="offset-sm-4 col-md-8">
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">close</button>
+            <button class="btn btn-primary" type="submit">Reserve</button>
+            </div>
+          </div>
+        </form>
       </div>
     </div>
-    <div class="container align-items-sm-center">
-      <div class ="row row-content">
-        <div class="col-12 col-sm-6" uk-countdown="date: 2021-01-19T07:32:56+00:00">
-          <span class="uk-countdown-number uk-countdown-days"></span>
-          <span class="uk-countdown-number uk-countdown-hours"></span>
-          <span class="uk-countdown-number uk-countdown-minutes"></span>
-          <span class="uk-countdown-number uk-countdown-seconds"></span>
-        </div>
-        <div class="col-12 col-sm-6">
-          <h1 class="alert">coundown start</h1>
-        </div>
-      </div>
-    </div>
+  </div>
+</div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.5.9/js/uikit.min.js" 
         integrity="sha512-OZ9Sq7ecGckkqgxa8t/415BRNoz2GIInOsu8Qjj99r9IlBCq2XJlm9T9z//D4W1lrl+xCdXzq0EYfMo8DZJ+KA==" crossorigin="anonymous"></script>
@@ -69,5 +90,13 @@
           integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
           integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+          <script>
+            var myModal = document.getElementById('myModal')
+              var myInput = document.getElementById('myInput')
+
+              myModal.addEventListener('shown.bs.modal', function () {
+                myInput.focus()
+              })
+          </script>
   </body>
 </html>
